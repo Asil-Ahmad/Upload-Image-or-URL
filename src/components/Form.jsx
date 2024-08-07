@@ -9,14 +9,13 @@ const Form = () => {
 
   const handleSubmit = () => {
     const createPara = document.createElement("p"); //creating p elements
-    const createImage = document.createElement("img");//creating img element
+    const createImage = document.createElement("img"); //creating img element
     createImage.className = "userImage"; //adding classname to img tag after creating
     console.log(createImage);
 
     const imgdesc = desc; //getting image desc
     // const img = image  ? URL.createObjectURL(image) : upload_image;
     //const img = imageURL ? imageURL : upload_image;
-
     const img = image ? URL.createObjectURL(image) : imageURL || upload_image;
 
     createImage.src = img; //this is to get source for image
@@ -62,7 +61,7 @@ const Form = () => {
               src={imageURL}
               onChange={(e) => setImageURL(e.target.value)}
               placeholder='Paste Image URL'
-              className='border-[3px] border-black focus-none outline-none py-1 px-3  rounded-lg'
+              className='border-[2px] border-black focus-none outline-none py-1 px-3  rounded-lg'
             />
           </label>
           <input
@@ -71,12 +70,9 @@ const Form = () => {
             minLength={1}
             maxLength={10}
             value={desc}
-            onChange={(e) => {
-              setDesc(e.target.value);
-              console.log("hy");
-            }}
+            onChange={(e) => setDesc(e.target.value)}
             placeholder='Enter image description'
-            className='border-[3px] border-black focus-none outline-none py-1 px-3  rounded-lg'
+            className='border-[2px] border-black focus-none outline-none py-1 px-3  rounded-lg'
           />
           <input
             type='button'
